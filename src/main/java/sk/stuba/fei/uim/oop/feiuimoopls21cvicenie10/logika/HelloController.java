@@ -1,9 +1,13 @@
 package sk.stuba.fei.uim.oop.feiuimoopls21cvicenie10.logika;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class HelloController {
+
+    @Autowired
+    private HelloService service;
 
     private int counter = 0;
 
@@ -24,6 +28,6 @@ public class HelloController {
 
     @PostMapping("/body")
     public String body(@RequestBody HelloRequestBody body) {
-        return "hello " + body.getName();
+        return service.createResponse(body);
     }
 }
