@@ -11,7 +11,7 @@ public class HelloController {
     private int counter = 0;
 
     @Autowired
-    public void setService(HelloService service) {
+    public HelloController(HelloService service) {
         this.service = service;
     }
 
