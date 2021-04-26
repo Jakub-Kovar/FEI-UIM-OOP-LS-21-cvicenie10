@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 public class HelloController {
 
-    private HelloService service;
+    private IGreetingService service;
 
     private int counter = 0;
 
     @Autowired
-    public HelloController(HelloService service) {
+    public HelloController(IGreetingService service) {
         this.service = service;
     }
 
